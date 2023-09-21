@@ -8,8 +8,8 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url); // Get the filename of the current module
 const __dirname = dirname(__filename); // Get the directory name of the current module
 
-app.use('/public', express.static('./public'));
-app.use('/scripts', express.static('./public/scripts'));
+app.use('/public', express.static(path.join(__dirname, '../client'))); //issue with scripts file in the public directory
+app.use('/public/scripts', express.static(path.join(__dirname, '../client/scripts')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'));

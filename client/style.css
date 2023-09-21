@@ -56,13 +56,6 @@ h1 {
   filter: drop-shadow(0 0 2em #f7df1eaa);
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 button {
   border-radius: 8px;
@@ -97,17 +90,45 @@ button:focus-visible {
 }
 
 
-.accordion .accordion-item {
-  border: 1px solid #ccc;
-  margin-bottom: 5px;
+.tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
 }
 
-.accordion .accordion-header {
-  padding: 10px;
+.tab {
+  width: 100%;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: #2c3e50;
+  font-weight: bold;
   cursor: pointer;
 }
+.tab-label:hover {
+  background: darken(#2c3e50, 10%);
+}
+.tab-label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all .35s;
+}
 
-.accordion .accordion-content {
-  display: none; /* Initially hide all content */
-  padding: 10px;
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50; /* $midnight variable from Codepen */
+  background: #ecf0f1; /* $clouds variable from Codepen */
+  transition: all .35s;
+}
+
+/* :checked input modification */
+.tab-label[aria-expanded="true"]::after {
+  transform: rotate(90deg);
 }
