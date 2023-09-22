@@ -5,26 +5,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Silicon Diaries</title>
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" type="text/css" href="/public/style.css">
 </head>
 
 <body>
-  <h1>Silicon Diaries</h1>
-
-  <div class="tabs">
-    <div class="tab">
-      <h2 class="accordion-header">Title 1</h2>
-        <h2 class="tab-label" role="button" tabindex="0" aria-expanded="false">Item 1</h2>
-        <div class="tab-content">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <img src="https://blog.codepath.org/wp-content/uploads/2020/06/Screen-Shot-2020-06-01-at-2.53.50-PM-1024x574.png" alt="Description">
-        </div>
+  <div class="silicon-diaries">
+    <div class="silicon-text">
+      <div class="text-wrapper">Silicon Diaries</div>
     </div>
-    <!-- Add more tab items as needed -->
-</div>
 
+    <div class="tabs">
 
-<script src="/public/scripts/main.js"></script>
+      <!-- Mental Health Tips Tab -->
+      <div class="tab">
+        <div class="box">
+          <div class="accordion-header">
+            <div class="overlap-group">
+              <div class="text-wrapper">Mental Health Tips</div>
+            </div>
+          </div>
+        </div>
+        <h2 class="tab-label text-wrapper-4" role="button" tabindex="0" aria-expanded="false">Take Regular Breaks</h2>
+        <div class="tab-content overlap">
+          <p class="text-wrapper-5">
+            Regular breaks can help developers refresh their mind, preventing burnout and maintaining a steady level
+            of productivity. As you can see here:
+          </p>
+          <img
+            src="https://www.verywellmind.com/thmb/WZSRhKa60kSlspYNNVFteyfNE7U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-best-way-to-switch-tasks-to-avoid-burnout-5095637-final-withtext-e3744cfbabff490c9be99be1202017fd.gif"
+            alt="Image illustrating taking a break">
+        </div>
+      </div>
+
+      <!-- Activities or Break Ideas Tab -->
+      <div class="tab">
+        <div class="box">
+          <div class="activities-tab">
+            <div class="overlap-group">
+              <div class="activities-tab-text">Activities for Developers</div>
+            </div>
+          </div>
+        </div>
+        <h2 class="tab-label" role="button" tabindex="0" aria-expanded="false">5-min Breathing Exercise</h2>
+        <div class="tab-content">
+          <p>A short exercise to help you refocus and reduce stress. Close your eyes, breathe in for a count of 4, hold
+            for 4, exhale for 4. Repeat.</p>
+          <video
+            src="https://www.verywellhealth.com/thmb/iWGEaTO261BkfclNFPRFNZOmOvg=/750x0/filters:gifv(webm)/breathing-exercises-for-anxiety-5088091_final-5f3a4a1fd0884fdf9453621256b64200.gif"
+            alt="Image illustrating breathing exercise">
+        </div>
+      </div>
+
+      <!-- Motivational Quotes Tab -->
+      <div class="tab">
+        <div class="box">
+          <div class="accordion-header">
+            <div class="overlap-group">
+              <div class="text-wrapper">Motivational Quotes</div>
+            </div>
+          </div>
+        </div>
+        <h2 class="tab-label" role="button" tabindex="0" aria-expanded="false">For those facing a bug</h2>
+        <div class="tab-content">
+          <blockquote>"When I look at the world I'm pessimistic, but when I look at people I am optimistic."
+          </blockquote>
+          <p>- Carl Rogers</p>
+          <img
+            src="https://www.verywellmind.com/thmb/uKfOjia6w9s7DMRDjDBI8fRcsx0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/humanistic-psychologist-carl-ransom-rogers-515301772-583f04983df78c6f6a9d1091.jpg"
+            alt="Motivational background">
+        </div>
+      </div>
+
+      <!-- Developer Jokes Tab -->
+      <div class="tab">
+        <div class="box">
+          <div class="accordion-header">
+            <div class="overlap-group">
+              <div class="text-wrapper">Developer Jokes</div>
+            </div>
+          </div>
+        </div>
+        <h2 class="tab-label" role="button" tabindex="0" aria-expanded="false">Why do developers wear glasses?</h2>
+        <div class="tab-content">
+          <p>Because they can't C#.</p>
+          <img src="https://www.verywellmind.com/thmb/WHPuAGFVWNTccdmWbkQmFQ015ds=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Health-benefits-of-humor-and-laughter-5101137-V1-aaf604df8e6c4c96b9bbcb1de7d6606e.png" alt="Joke related image">
+        </div>
+      </div>
+
+      <!-- Coding Tutorials Tab -->
+      <div class="tab">
+        <div class="box">
+          <div class="accordion-header">
+            <div class="overlap-group">
+              <div class="text-wrapper">Coding Tutorials</div>
+            </div>
+          </div>
+        </div>
+        <h2 class="tab-label" role="button" tabindex="0" aria-expanded="false">Introduction to Python</h2>
+        <div class="tab-content">
+          <p>Python is a versatile programming
+            <img src="https://www.verywellmind.com/thmb/sTzdX6lMaTr3OXHkx8pE7oz1yCg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/fluid-intelligence-vs-crystallized-intelligence-2795004_color2-5b69d275c9e77c0050ba7290.png" alt="Joke related image">
+        </div>
+      </div>
+
+      <script src="/public/scripts/main.js"></script>
+    </div>
 </body>
 
 </html>

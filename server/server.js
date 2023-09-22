@@ -8,15 +8,16 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url); // Get the filename of the current module
 const __dirname = dirname(__filename); // Get the directory name of the current module
 
-app.use((req, res, next) => {
-    console.log("Request URL:", req.url);
-    next();
-});
+// To check the requested URLs.
+// app.use((req, res, next) => {
+//     console.log("Request URL:", req.url);
+//     next();
+// });
 
 // Explicitly serve main.js
 app.get('/public/scripts/main.js', (req, res) => {
     const explicitPath = path.join(__dirname, '../client/public/scripts/main.js');
-    console.log("Serving:", explicitPath);
+    // console.log("Serving:", explicitPath);
     res.sendFile(explicitPath);
 });
 
