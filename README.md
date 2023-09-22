@@ -25,9 +25,9 @@ The following **optional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented required features for Unit 1 features:
 
-👉🏿<img src='' title='' />
+👉🏿<img src='https://github.com/fzinnah17/SiliconDiaries/blob/main/Zinnah-Farnaz-SiliconProject.gif' title='Unit 1 features GIF' />
 
 GIF created with ...  LiceCap
 
