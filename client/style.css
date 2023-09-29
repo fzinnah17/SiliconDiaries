@@ -1,4 +1,4 @@
-/* body {
+body {
   background-color: #5e917b;
  
   justify-content: center;
@@ -173,8 +173,8 @@ h1 {
 
 .tab-label[aria-expanded="true"]::after {
   transform: rotate(90deg);
-} */
-
+}
+/* 
 body {
   background-color: #5e917b;
   display: flex;
@@ -278,4 +278,4 @@ h1 {
   max-width: 50%;
   display: block;
   margin: 0 auto;
-}
+} */

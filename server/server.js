@@ -2,7 +2,9 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import diariesRouter from './routes/diaries.js';
+import fs from 'fs';
+
+// import diariesRouter from './routes/diaries.js';
 
 
 const app = express();
@@ -16,21 +18,43 @@ const __dirname = dirname(__filename); // Get the directory name of the current 
 //     next();
 // });
 
-// Explicitly serve main.js
-app.get('/public/scripts/main.js', (req, res) => {
-    const explicitPath = path.join(__dirname, '../client/public/scripts/main.js');
-    // console.log("Serving:", explicitPath);
-    res.sendFile(explicitPath);
+// // Explicitly serve main.js
+// app.get('/public/scripts/main.js', (req, res) => {
+//     const explicitPath = path.join(__dirname, '../client/public/scripts/main.js');
+//     // console.log("Serving:", explicitPath);
+//     res.sendFile(explicitPath);
+// });
+
+app.get('/public/scripts/:scriptName', (req, res) => {
+    const scriptName = req.params.scriptName;
+    const explicitPath = path.join(__dirname, `../client/public/scripts/${scriptName}`);
+    
+    // Optional: Check if the file exists before serving, to avoid potential errors
+    if (fs.existsSync(explicitPath)) {
+        res.sendFile(explicitPath);
+    } else {
+        res.status(404).send('Script not found.');
+    }
 });
+
 
 // Serve static files from the client directory
 app.use('/public', express.static(path.join(__dirname, '../client'))); //issue with scripts file in the public directory
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/index.html'));
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/index.html'));
+// });
+
+app.get(['/', '/:diaryTitle'], (req, res) => {
+    if(req.params.diaryTitle) {
+        res.sendFile(path.join(__dirname, '../client/diary.html'));
+    } else {
+        res.sendFile(path.join(__dirname, '../client/index.html'));
+    }
 });
 
-app.use('/diaries', diariesRouter);
+
+// app.use('/diaries', diariesRouter);
 
 const PORT = process.env.PORT || 3001;
 

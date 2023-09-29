@@ -1,13 +1,13 @@
+import tabsData from "./tabsData.js";
+
 const renderDiaries = async () => {
-    const response = await fetch('/diaries');
-    const data = await response.json();
     const mainContent = document.querySelector('.tabs');
-    
-    if (data) {
-        data.map(diary => {
+
+    if (tabsData.length > 0) {
+        tabsData.map(diary => {
             const tab = document.createElement('div');
             tab.className = 'tab';
-            
+
             // Header Section
             const headerDiv = document.createElement('div');
             headerDiv.className = 'box';
@@ -19,7 +19,7 @@ const renderDiaries = async () => {
 
             headerContentDiv.appendChild(headerContent);
             headerDiv.appendChild(headerContentDiv);
-            
+
             // Tab Label
             const tabLabel = document.createElement('h2');
             tabLabel.className = 'tab-label';
@@ -27,7 +27,11 @@ const renderDiaries = async () => {
             tabLabel.setAttribute('role', 'button');
             tabLabel.setAttribute('tabindex', '0');
             tabLabel.setAttribute('aria-expanded', 'false');
-            
+
+            tabLabel.addEventListener('click', function () {
+                window.location.href = '/' + diary.tabTitle.toLowerCase().replace(/ /g, '-');
+            });
+
             // Tab Content
             const tabContent = document.createElement('div');
             tabContent.className = 'tab-content';
