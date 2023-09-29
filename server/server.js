@@ -2,6 +2,8 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import diariesRouter from './routes/diaries.js';
+
 
 const app = express();
 
@@ -31,6 +33,8 @@ app.use('/public', express.static(path.join(__dirname, '../client'))); //issue w
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'));
 });
+
+app.use('/diaries', diariesRouter);
 
 const PORT = process.env.PORT || 3001;
 
