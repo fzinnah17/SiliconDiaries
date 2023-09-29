@@ -29,8 +29,10 @@ const renderDiaries = async () => {
             tabLabel.setAttribute('aria-expanded', 'false');
 
             tabLabel.addEventListener('click', function () {
-                window.location.href = '/' + diary.tabTitle.toLowerCase().replace(/ /g, '-');
+                const diaryIndex = tabsData.indexOf(diary) + 1; // +1 to convert to 1-based index
+                window.location.href = '/diary/' + diaryIndex;
             });
+            
 
             // Tab Content
             const tabContent = document.createElement('div');

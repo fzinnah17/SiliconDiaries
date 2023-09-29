@@ -45,13 +45,14 @@ app.use('/public', express.static(path.join(__dirname, '../client'))); //issue w
 //     res.sendFile(path.join(__dirname, '../client/index.html'));
 // });
 
-app.get(['/', '/:diaryTitle'], (req, res) => {
-    if(req.params.diaryTitle) {
-        res.sendFile(path.join(__dirname, '../client/diary.html'));
+app.get(['/', '/diary/:id'], (req, res) => {
+    if(req.params.id) {
+        res.sendFile(path.join(__dirname, '../client/public/diary.html'));
     } else {
         res.sendFile(path.join(__dirname, '../client/index.html'));
     }
 });
+
 
 
 // app.use('/diaries', diariesRouter);
