@@ -25,10 +25,6 @@ app.get('/public/scripts/main.js', (req, res) => {
 
 // Serve static files from the client directory
 app.use('/public', express.static(path.join(__dirname, '../client'))); //issue with scripts file in the public directory
-// app.use('/public/scripts', express.static(path.join(__dirname, '../client/scripts')));
-
-// app.use('/public', express.static('/Users/farnazinnia/SiliconDiaries/client'));
-
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'));
