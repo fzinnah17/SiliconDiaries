@@ -24,8 +24,10 @@ import DiariesController from '../controllers/diaries.js';
 const router = express.Router();
 
 router.get('/', DiariesController.getDiaries);
+router.get('/search/:attribute/:value', DiariesController.searchDiaries);
 router.get('/:diaryId', (req, res) => {
     res.status(200).sendFile(path.resolve(__dirname, '../public/diary.html'));
 });
+
 
 export default router;
