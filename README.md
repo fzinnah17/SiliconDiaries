@@ -6,7 +6,7 @@ About this web app:
       
       In the fast-paced world of technology, it's essential for developers to pause, reflect, and monitor their well-being. "Silicon Valleys" serves as a digital sanctuary for tech professionals to document their daily feelings, achievements, and struggles. This platform emphasizes mindfulness, self-reflection, and proactive self-care.
 
-Time spent: 10 hours
+Time spent: 40 hours
 
 ## Required Features
 
