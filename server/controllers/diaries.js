@@ -10,6 +10,7 @@ const getDiaries = async (req, res) => {
     }
 }
 
+
 const searchDiaries = async (req, res) => {
     try {
         const { attribute, value } = req.params;

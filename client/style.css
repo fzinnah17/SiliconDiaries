@@ -175,7 +175,10 @@ h1 {
   transform: rotate(90deg);
 } */
 
-body {
+
+
+
+/* body {
   background-color: #5e917b;
   display: flex;
   justify-content: center;
@@ -183,6 +186,7 @@ body {
   height: 100vh;
   margin: 30px;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -275,6 +279,152 @@ h1 {
 }
 
 .tab-content img, .tab-content video {
+  max-width: 50%;
+  display: block;
+  margin: 0 auto;
+} */
+
+
+body {
+  background-color: #5e917b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 30px;
+}
+
+/* Add styles for the navigation bar */
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50; /* Adjust the background color as needed */
+  padding: 10px 20px; /* Add padding for spacing */
+  position: fixed; /* Fixed position to keep it at the top */
+  width: 100%; /* Full width */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.header-title {
+  /* Add styles for the header title (centered text) */
+  font-family: "Roboto-Black", Helvetica;
+  font-weight: 900;
+  color: #ecdbba;
+  font-size: 28px; /* Adjust font size as needed */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right button {
+  /* Style the Home button */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ecdbba;
+  font-size: 16px; /* Adjust font size as needed */
+  margin-left: 10px; /* Add margin for spacing */
+}
+
+.header-right button:hover {
+  text-decoration: underline; /* Add underline on hover if desired */
+}
+
+.silicon-diaries {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.silicon-diaries .div {
+  background-color: #5e917b;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.silicon-diaries .silicon-text {
+  width: 589px;
+  height: 105px;
+  margin-bottom: 20px;
+}
+
+.silicon-diaries .text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Roboto-Black", Helvetica;
+  font-weight: 900;
+  color: #ecdbba;
+  font-size: 90px;
+  text-align: center;
+}
+
+.box {
+  width: 350px;
+  height: 65px;
+  background-color: #161616;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-header {
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #ecdbba;
+  font-size: 28px;
+}
+
+.tabs {
+  max-width: 100vw;
+  width: 70%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  align-items: center;
+}
+
+.tab {
+  width: 100%;
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab-label:hover {
+  background: #2a3848;
+}
+
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50;
+  background: #ecdbba;
+  transition: all 0.35s;
+  overflow: hidden;
+}
+
+.tab-content img,
+.tab-content video {
   max-width: 50%;
   display: block;
   margin: 0 auto;
