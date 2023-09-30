@@ -16,3 +16,16 @@
 // });
 
 // export default router;
+
+
+import express from 'express';
+import DiariesController from '../controllers/diaries.js';
+
+const router = express.Router();
+
+router.get('/', DiariesController.getDiaries);
+router.get('/:diaryId', (req, res) => {
+    res.status(200).sendFile(path.resolve(__dirname, '../public/diary.html'));
+});
+
+export default router;

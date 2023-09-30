@@ -3,8 +3,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
+import './config/dotenv.js';
 
-// import diariesRouter from './routes/diaries.js';
+import diaryRoutes from './routes/diary.js';
 
 
 const app = express();
@@ -53,9 +54,7 @@ app.get(['/', '/diary/:id'], (req, res) => {
     }
 });
 
-
-
-// app.use('/diaries', diariesRouter);
+app.use('/diaries', diaryRoutes);
 
 const PORT = process.env.PORT || 3001;
 
