@@ -18,16 +18,36 @@
 // export default router;
 
 
+// import express from 'express';
+// import DiariesController from '../controllers/diaries.js';
+
+// const router = express.Router();
+
+// router.get('/', DiariesController.getDiaries);
+// router.get('/search/:attribute/:value', DiariesController.searchDiaries);
+// router.get('/:diaryId', (req, res) => {
+//     res.status(200).sendFile(path.resolve(__dirname, '../public/diary.html'));
+// });
+
+
+// export default router;
+
+
 import express from 'express';
 import DiariesController from '../controllers/diaries.js';
+import path from 'path';  // Ensure this import is present
 
 const router = express.Router();
 
 router.get('/', DiariesController.getDiaries);
 router.get('/search/:attribute/:value', DiariesController.searchDiaries);
+
+// Add this before serving the static HTML
+router.get('/:diaryId/data', DiariesController.getDiaryById); 
+
 router.get('/:diaryId', (req, res) => {
     res.status(200).sendFile(path.resolve(__dirname, '../public/diary.html'));
 });
 
-
 export default router;
+

@@ -9,9 +9,11 @@ const createDiariesTable = async () => {
     CREATE TABLE IF NOT EXISTS diaries (
       id SERIAL PRIMARY KEY,
       title TEXT NOT NULL,
+      text TEXT NOT NULL,
       content TEXT NOT NULL,
-      created_on DATE NOT NULL,
-      author TEXT NOT NULL
+      image_url TEXT,
+      description TEXT,
+      link TEXT
     )
   `;
 
@@ -28,14 +30,16 @@ const seedDiariesTable = async () => {
 
   diaryData.forEach((diary) => {
     const insertQuery = {
-      text: 'INSERT INTO diaries (title, content, created_on, author) VALUES ($1, $2, $3, $4)'
+      text: 'INSERT INTO diaries (title, text, content, image_url, description, link) VALUES ($1, $2, $3, $4, $5, $6)'
     }
 
     const values = [
       diary.title,
+      diary.text,
       diary.content,
-      diary.created_on,
-      diary.author
+      diary.image_url,
+      diary.description,
+      diary.link
     ];
 
     pool.query(insertQuery, values, (err, res) => {
